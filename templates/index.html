@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section id="introduction">
+        <img src="{{ url_for('static', filename='avatar.png') }}" alt="Avatar" class="avatar">
+        <h1>{{ welcome_message }}</h1>
+        <p>Hi, I'm [Your Name], a passionate developer. Explore my work and get to know me better.</p>
+    </section>
+{% endblock %}
