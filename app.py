@@ -51,9 +51,18 @@ portfolio_data = {
 
 @app.route('/')
 def home():
-    # The geolocation logic has been moved to the index.html template for accuracy.
-    # The server just provides the data.
-    return render_template('index.html', data=portfolio_data)
+    # This logic now runs on the server to generate the welcome message.
+    # NOTE: On a server, this may show the server's location, not the user's.
+    welcome_message = "Welcome!"
+    try:
+        ip_info = requests.get('https://ipapi.co/json/').json()
+        city = ip_info.get('city', 'your area')
+        welcome_message = f"Welcome from {city}!"
+    except Exception as e:
+        print(f"Could not fetch location: {e}")
+        welcome_message = "Welcome!" # Fallback message
+
+    return render_template('index.html', data=portfolio_data, welcome_message=welcome_message)
 
 @app.route('/about')
 def about():
