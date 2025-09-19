@@ -11,15 +11,23 @@ This is a personal portfolio website built with Flask.
 
 ## Running the Application
 
-1.  **Install the dependencies:**
+1.  **Create and activate a virtual environment:**
+    ```powershell
+    python -m venv .venv
+    .venv\Scripts\Activate.ps1
+    ```
+
+2.  **Install the dependencies:**
     ```
     pip install -r requirements.txt
     ```
-2.  **Run the application:**
+
+3.  **Run the application:**
     ```
     python app.py
     ```
-3.  **Open your browser and navigate to:** `http://127.0.0.1:5000`
+
+4.  **Open your browser and navigate to:** `http://127.0.0.1:5000`
 
 ## To-Do
 
